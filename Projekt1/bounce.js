@@ -2,11 +2,8 @@ var canvas, ctx, container;
 canvas = document.createElement("canvas");
 ctx = canvas.getContext("2d");
 var ball;
-var message = "";
 
-// predkosc osi x
 var vx = 11;
-// predkosc osi y
 var vy = 11;
 var raf;
 var gravity = 0.5;
@@ -15,8 +12,7 @@ var xFriction = 0.2;
 ball = { x: 100, y: 100, radius: 15, status: 0, color: "red" };
 let state = 0;
 var flaga = 0;
-async function simulate(wspX, wspY,VX,VY,RAY,ACC,RES,RUB) {
-
+async function simulate(wspX, wspY, VX, VY, RAY, ACC, RES, RUB) {
   ball.x = parseInt(wspX);
   ball.y = parseInt(wspY);
   vx = parseInt(VX);
@@ -25,19 +21,13 @@ async function simulate(wspX, wspY,VX,VY,RAY,ACC,RES,RUB) {
   gravity = parseFloat(ACC);
   bounce = parseFloat(RES);
   xFriction = parseFloat(RUB);
-  //setInterval(draw, 1000 / 35);
-  
+
   setupCanvas();
-  if(flaga == 0)
-  {
+  if (flaga == 0) {
     raf = window.requestAnimationFrame(draw);
-    
-  }
-  else
-  {
+  } else {
     raf = window.cancelAnimationFrame(draw);
   }
-  
 
   flaga = 1;
   console.log(flaga);
@@ -74,24 +64,14 @@ function ballMovement() {
   ball.y += vy;
   vy += gravity;
 
-
-  //If either wall is hit, change direction on x axis
   if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
     vx *= -1;
   }
 
-  // Ball hits the floor
   if (ball.y + ball.radius > canvas.height) {
-    // ||
-
-    // Re-positioning on the base
     ball.y = canvas.height - ball.radius;
-
-    //bounce the ball
     vy *= -bounce;
-    //do this otherwise, ball never stops bouncing
     if (vy < 0 && vy > -2.1) vy = 0;
-    //do this otherwise ball never stops on xaxis
     if (Math.abs(vx) < 1.1) vx = 0;
 
     xF();

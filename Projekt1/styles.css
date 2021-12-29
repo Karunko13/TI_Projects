@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(241, 241, 241);
+    background-color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-top:0px;
 }
@@ -13,7 +13,7 @@ body{
 }
 
 header{
-    background-color: rgb(73, 72, 72);
+    background-color: rgb(54, 48, 48);
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;

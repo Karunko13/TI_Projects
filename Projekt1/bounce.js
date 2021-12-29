@@ -56,11 +56,7 @@ async function draw() {
   ctx.strokeStyle = "solid #000";
   ctx.lineWidth = 6;
   ctx.strokeRect(0, 0, canvas.width, canvas.height);
-  //text
-  ctx.fillStyle = "blue";
-  ctx.font = "20px";
 
-  //draw cirlce
   ctx.beginPath();
   ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2, false);
   ctx.fillStyle = ball.color;

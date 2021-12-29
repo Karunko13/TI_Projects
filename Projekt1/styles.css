@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(241, 241, 241);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:0px;
+}
+
+#home
+{   
+	max-width: 50%;
+	margin: auto;
+    height: 960px;
+    line-height: 1.4;
+}
+
+header{
+    background-color: rgb(73, 72, 72);
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+
+}
+nav{
+    margin: 5px;
+    text-align: center;
+    color:white;
+    padding: 10px 26px;
+}
+a {
+    color:white;
+    margin: 100px;
+}
+
+.centerTable{
+    margin-left: 200px;
+    margin-top: 100px;
+    font-size:20px;
+}
+.center{
+    display: block;
+    text-align: center;
+}

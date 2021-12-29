@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<head>
+    <title>Projekt 1- Mateusz Nizio</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./bounce.js"></script>
+</head>
+
+<body>
+  <header>
+      <nav>
+          <a href="index.html">Strona domowa</a>
+          <a href="symulacja.html">Projekt</a>
+      </nav>
+  </header>
+    <h1 class="center">Dobierz parametry do symulacji i wykonaj</h1>
+
+    <form method="post" name="drawCircle" id="drawDetails">
+        <table class="centerTable">
+
+
+          <tr>
+            <td>Poczatkowa wspolrzedna x:</td>
+            <td>
+              <input
+                type="range"
+                value="50"
+                min="1"
+                max="800"
+                id="wspX"
+                step="1"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="wspXValue" for="wspX">50</output>
+            </td>
+         
+          </tr>
+          <tr>
+            <td>Poczatkowa wspolrzedna y:</td>
+            <td>
+              <input
+                type="range"
+                id="wspY"
+                min="1"
+                max="600"
+                value="50"
+                step="1"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="wspYValue" for="wspY">50</output>
+            </td>
+          
+          </tr>
+
+          <tr>
+            <td>Predkosc w osi x:</td>
+            <td>
+              <input
+                type="range"
+                id="speedX"
+                min="1"
+                max="100"
+                value="11"
+                step="1"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="speedXValue" for="speedX">11</output>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>Predkosc w osi y:</td>
+            <td>
+              <input
+                type="range"
+                id="speedY"
+                min="1"
+                max="100"
+                value="11"
+                step="1"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="speedYValue" for="speedY">11</output>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Promień kulki:</td>
+            <td>
+              <input
+                type="range"
+                id="ray"
+                min="1"
+                max="100"
+                value="15"
+                step="1"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="rayValue" for="ray">15</output>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Wartosc przyspieszenia(grawitacji):</td>
+            <td>
+              <input
+                type="range"
+                id="acc"
+                min="0.01"
+                max="1"
+                value="0.5"
+                step="0.01"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="accValue" for="acc">0.5</output>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Wartosc sprezystosci kulki</td>
+            <td>
+              <input
+                type="range"
+                id="res"
+                min="0.01"
+                max="1"
+                value="0.5"
+                step="0.01"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="resValue" for="res">0.5</output>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Wartosc tarcia o podloze</td>
+            <td>
+              <input
+                type="range"
+                id="rub"
+                min="0.01"
+                max="1"
+                value="0.2"
+                step="0.01"
+                oninput="this.nextElementSibling.value = this.value"
+              />
+              <output name="value" id="rubValue" for="rub">0.2</output>
+            </td>
+  
+          </tr>
+
+          <tr>
+            <td colspan="2"><input type="submit" value="Wykonaj" /></td>
+          </tr>
+        </table>
+
+      </div>
+    </form>
+
+    <script>
+      var form = document.getElementById("drawDetails");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        simulate(
+        form.wspX.value,
+        form.wspY.value,
+        form.speedX.value,
+        form.speedY.value,
+        form.ray.value,
+        form.acc.value,
+        form.res.value,
+        form.rub.value);
+      });
+    </script>
+  </body>
+</html>
+<!-- przyspieszenie, sprezystosc, tarcie- beda do wybory bez wpisywania -->

@@ -14,6 +14,7 @@
       </nav>
   </header>
     <h1 class="center">Dobierz parametry do symulacji i wykonaj</h1>
+    <div style="width:795px;height:595px;border:1px solid #000;margin-left:1045px;margin-top:43px;"></div>
 
     <form method="post" name="drawCircle" id="drawDetails">
         <table class="centerTable">
@@ -91,13 +92,13 @@
               <input
                 type="range"
                 id="ray"
-                min="1"
-                max="100"
-                value="15"
+                min="5"
+                max="50"
+                value="20"
                 step="1"
                 oninput="this.nextElementSibling.value = this.value"
               />
-              <output name="value" id="rayValue" for="ray">15</output>
+              <output name="value" id="rayValue" for="ray">20</output>
             </td>
 
           </tr>
@@ -157,7 +158,16 @@
 
       </div>
     </form>
-
+    <div style="width:700px;height:300px;border:0px solid #000;margin-left:200px;margin-top:60px;">
+      <article>
+        <h4>Uwaga!</h4>
+        <p>Pomimo ograniczenia  wartością minimalną oraz maksymalną, parametry należy dobierać rozsądnie. Na przykład wybranie małego rozmiaru kulki, dużej sprężystości oraz małego tarcia może doprowadzić do nieskończonej animacji.</p>
+        <h4>Uwaga!</h4>
+        <p>Kliknięcie przycisku "Wykonaj" podczas trwania animacji spowoduje przerwanie aktualnego zadania i rozpoczęcie animacji od nowa(z wybranymi parametrami). Po skończeniu animacji, nową możemy rozpocząc także za pomocą tego prz</p>
+         
+       
+    </article>
+    </div>
     <script>
       var form = document.getElementById("drawDetails");
       form.addEventListener("submit", function (e) {

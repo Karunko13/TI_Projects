@@ -111,7 +111,7 @@ function setupCanvas() {
   container.style.height = "600px";
   container.style.background = "blue";
   container.style.cssText =
-    "font:20px;position:absolute;top:150px;left:1050px;border:2px  Verdana;";
+    "font:20px;position:absolute;top:150px;left:1050px;border:3px  Verdana;";
 
   canvas.width = 800;
   canvas.height = 600;
